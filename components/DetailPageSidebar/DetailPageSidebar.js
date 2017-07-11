@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import Notification from './Notification';
+import { Notification } from 'carbon-components';
 
 class DetailPageSidebar extends Component {
     static propTypes = { 

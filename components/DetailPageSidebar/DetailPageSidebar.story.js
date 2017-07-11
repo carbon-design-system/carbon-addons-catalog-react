@@ -1,7 +1,7 @@
 import React from 'react';
 import { action, storiesOf } from '@storybook/react';
-import DetailPageSidebar from '../../components/DetailPageSidebar';
-import Notification from '../../components/Notification';
+import DetailPageSidebar from './DetailPageSidebar';
+import { Notification } from 'carbon-components-react';
 
 
 const detailPageSidebarProps = {

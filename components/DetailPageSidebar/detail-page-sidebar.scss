@@ -1,13 +1,4 @@
-@import '../../globals/scss/colors';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
-@import 'mixins';
+@import '~carbon-components/scss/globals/scss/styles.scss';
 
 @include exports('detail-page-sidebar') {
   .bx--detail-page-sidebar__container { 
