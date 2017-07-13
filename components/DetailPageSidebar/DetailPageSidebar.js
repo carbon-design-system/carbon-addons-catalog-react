@@ -54,7 +54,23 @@ class DetailPageSidebar extends Component {
         }),
         children: PropTypes.node };
     
- 
+    generateArtifactBlock(obj) {
+        return (
+            <div className={`inset-container ${ obj.cssName }-container`}>
+                <span className={ `label ${ obj.cssName }-label` }>{ obj.label }</span>
+                <span className={ `value ${ obj.cssName }-value` }>{ obj.value }</span>
+            </div>
+        )
+    }
+
+    generateBlocks(opts) {
+        return opts.map(obj => {
+            if (this.props.artifact[obj.type]) {
+                return this.generateArtifactBlock(obj);
+            }
+        });
+    }
+
     render() {
         const {
             children,
@@ -136,55 +152,16 @@ class DetailPageSidebar extends Component {
                         }
                     </div>
                     <div className="details-container">
-                        { artifact.author &&
-                            <div className="inset-container author-container">
-                                <span className="label author-label">{i18n.author}</span>
-                                <span className="value author-value">{artifact.author}</span>
-                            </div>
-                        }
-                        { artifact.version &&
-                            <div className="inset-container version-container">
-                                <span className="label version-label">{i18n.version}</span>
-                                <span className="value version-value">{artifact.version}</span>
-                            </div>
-                        }
-                        { artifact.createdDate &&
-                            <div className="inset-container created-date-container">
-                                <span className="label created-date-label">{i18n.createdDate}</span>
-                                <span className="value created-date-value">{artifact.createdDate}</span>
-                            </div>
-                        }
-                        { artifact.publishDate &&
-                            <div className="inset-container publish-date-container">
-                                <span className="label publish-date-label">{i18n.publishDate}</span>
-                                <span className="value publish-date-value">{artifact.publishDate}</span>
-                            </div>
-                        }
-                        { artifact.type !== 'softlayer' &&
-                            <div className="inset-container type-container">
-                                <span className="label type-label">{i18n.type}</span>
-                                { artifact.type === 'boilerplate' &&
-                                    <span className="value type-value">{i18n.boilerplate}</span>
-                                }
-                                { artifact.type === 'runtime' &&
-                                    <span className="value type-value">{i18n.runtime}</span>
-                                }
-                                { artifact.type === 'service' &&
-                                    <span className="value type-value">{i18n.service}</span>
-                                }
-                            </div>
-                        }
-                        { artifact.locationName &&
-                            <div className="inset-container location-container">
-                                <span className="label location-label">{i18n.location}</span>
-                                <span className="value location-value">{artifact.locationName}</span>
-                            </div>
-                        }
-                        { artifact.regionName &&
-                            <div className="inset-container region-container">
-                                <span className="label region-label">{i18n.region}</span>
-                                <span className="value region-value">{artifact.regionName}</span>
-                            </div>
+                        { 
+                            this.generateBlocks([
+                                { type: 'author', cssName: 'author', label: i18n.author, value: artifact.author },
+                                { type: 'version', cssName: 'version', label: i18n.version, value: artifact.version },
+                                { type: 'createdDate', cssName: 'created-date', label: i18n.createdDate, value: artifact.createdDate },
+                                { type: 'publishedDate', cssName: 'publish-date', label: i18n.publishDate, value: artifact.publishDate },
+                                { type: 'type', cssName: 'type', label: i18n.type, value: i18n[artifact.type] },
+                                { type: 'locationName', cssName: 'location', label: i18n.location, value: artifact.locationName },
+                                { type: 'regionName', cssName: 'region', label: i18n.region, value: artifact.regionName }
+                            ])
                         }
                     </div>
                 </div>
