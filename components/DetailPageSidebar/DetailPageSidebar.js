@@ -86,22 +86,19 @@ class DetailPageSidebar extends Component {
                 { (creditNotification || notification) &&
                     <div className="inline-notification-container">
                         { creditNotification &&
-                            <Notification className="inline" title={creditNotification.message} kind={creditNotification.kind}
-                            />
+                            <Notification className="inline" title={creditNotification.message} kind={creditNotification.kind} />
                         }
                         { notification &&
-                            <Notification className="inline" title={notification.message} kind={notification.kind}
-                                />
+                            <Notification className="inline" title={notification.message} kind={notification.kind} />
                         }
                     </div>
                 }
-                <div className={`bx--artifact-details-sidebar-container${artifact.tag ?
-                    ` ${artifact.tag}` : ''}${artifact.stageTag ? ` ${artifact.stageTag}` : ''}`}>
+                <div className={`bx--artifact-details-sidebar-container ${artifact.tag || ''} ${artifact.stageTag || ''}`}>
                     { (artifact.type === 'runtime' || artifact.type === 'boilerplate') && (
                         <h2 className="description-label">{artifact.name}</h2>
                     )}
                     { artifact.deprecationUrl && artifact.stageTag === 'ibm_deprecated' && (
-                        <p className="tag-description stage-tag-description" dangerouslySetInnerHTML={{ __html: i18n.deprecationWarning }}/>
+                        <p className="tag-description stage-tag-description" dangerouslySetInnerHTML={{ __html: i18n.deprecationWarning }} />
                     )}
                     { artifact.tag === 'ibm_experimental' && (
                         <div className="tag-container">
@@ -115,7 +112,7 @@ class DetailPageSidebar extends Component {
                         </div>
                     )}
                     { artifact.tag === 'ibm_experimental' && (
-                        <p className="tag-description" dangerouslySetInnerHTML={{ __html: i18n.experimentalDesc }}/>
+                        <p className="tag-description" dangerouslySetInnerHTML={{ __html: i18n.experimentalDesc }} />
                     )}
 
                     <p className="details-description">{artifact.description}</p>
@@ -140,14 +137,10 @@ class DetailPageSidebar extends Component {
                     {children}
                     <div className="description-tag-container">
                         { artifact.docURL &&
-                            <a className="description-tag-docs-link" href={artifact.docURL} target="_new">
-                                {i18n.viewDocs}
-                            </a>
+                            <a className="description-tag-docs-link" href={artifact.docURL} target="_new">{i18n.viewDocs}</a>
                         }
                         { artifact.type === 'softlayer' && artifact.termsUrl &&
-                            <a className="description-tag-terms-link" href={artifact.termsUrl} target="_new">
-                                {i18n.viewTerms}
-                            </a>
+                            <a className="description-tag-terms-link" href={artifact.termsUrl} target="_new">{i18n.viewTerms}</a>
                         }
                     </div>
                     <div className="details-container">
