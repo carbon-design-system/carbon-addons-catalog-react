@@ -78,7 +78,6 @@ class DetailPageSidebar extends Component {
             creditNotification,
             i18n,
             artifact,
-            ...other
         } = this.props;
         const isStandardAccount = false;// (accountType === 'STANDARD');
 
