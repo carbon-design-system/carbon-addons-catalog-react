@@ -1,20 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Notification } from 'carbon-components';
 
 class DetailPageSidebar extends Component {
-    static propTypes = { 
-        notification: PropTypes.shape({
-            kind: PropTypes.string,
-            title: PropTypes.string,
-            message: PropTypes.string,
-        }), 
-        creditNotification: PropTypes.shape({
-            kind: PropTypes.string,
-            title: PropTypes.string,
-            message: PropTypes.string,
-        }),
+    static propTypes = {
         artifact: PropTypes.shape({
             name: PropTypes.string,
             id: PropTypes.string,
@@ -52,13 +41,14 @@ class DetailPageSidebar extends Component {
             location: PropTypes.string,
             region: PropTypes.string,
         }),
-        children: PropTypes.node };
+        children: PropTypes.node 
+    };
     
     generateArtifactBlock(obj) {
         return (
-            <div className={`inset-container ${ obj.cssName }-container`}>
-                <span className={ `label ${ obj.cssName }-label` }>{ obj.label }</span>
-                <span className={ `value ${ obj.cssName }-value` }>{ obj.value }</span>
+            <div className={`bx--detail-page-sidebar-artifact-prop ${ obj.cssName }-container`}>
+                <span className={ `bx--detail-page-sidebar-artifact-label ${ obj.cssName }-label` }>{ obj.label }</span>
+                <span className={ `bx--detail-page-sidebar-artifact-value ${ obj.cssName }-value` }>{ obj.value }</span>
             </div>
         )
     }
@@ -74,34 +64,22 @@ class DetailPageSidebar extends Component {
     render() {
         const {
             children,
-            notification,
-            creditNotification,
             i18n,
             artifact,
         } = this.props;
         const isStandardAccount = false;// (accountType === 'STANDARD');
 
         return (
-            <div className="bx--detail-page-sidebar__container">
-                { (creditNotification || notification) &&
-                    <div className="inline-notification-container">
-                        { creditNotification &&
-                            <Notification className="inline" title={creditNotification.message} kind={creditNotification.kind} />
-                        }
-                        { notification &&
-                            <Notification className="inline" title={notification.message} kind={notification.kind} />
-                        }
-                    </div>
-                }
-                <div className={`bx--artifact-details-sidebar-container ${artifact.tag || ''} ${artifact.stageTag || ''}`}>
+            <div className="bx--detail-page-sidebar">
+                <div className={`bx--detail-page-sidebar-artifact ${artifact.tag || ''} ${artifact.stageTag || ''}`}>
                     { (artifact.type === 'runtime' || artifact.type === 'boilerplate') && (
-                        <h2 className="description-label">{artifact.name}</h2>
+                        <h2 className="bx--detail-page-sidebar-artifact-name">{artifact.name}</h2>
                     )}
                     { artifact.deprecationUrl && artifact.stageTag === 'ibm_deprecated' && (
-                        <p className="tag-description stage-tag-description" dangerouslySetInnerHTML={{ __html: i18n.deprecationWarning }} />
+                        <p className="bx--detail-page-sidebar-artifact-tag stage-artifact-tag" dangerouslySetInnerHTML={{ __html: i18n.deprecationWarning }} />
                     )}
                     { artifact.tag === 'ibm_experimental' && (
-                        <div className="tag-container">
+                        <div className="artifact-tag-container">
                             { isStandardAccount && artifact.accountTag &&
                                 <div className="account-tag">{artifact.accountTagName}</div>
                             }
@@ -112,16 +90,13 @@ class DetailPageSidebar extends Component {
                         </div>
                     )}
                     { artifact.tag === 'ibm_experimental' && (
-                        <p className="tag-description" dangerouslySetInnerHTML={{ __html: i18n.experimentalDesc }} />
+                        <p className="bx--detail-page-sidebar-artifact-tag" dangerouslySetInnerHTML={{ __html: i18n.experimentalDesc }} />
                     )}
 
-                    <p className="details-description">{artifact.description}</p>
+                    <p className="bx--detail-page-sidebar-artifact-description">{artifact.description}</p>
 
                     { artifact.tag !== 'ibm_experimental' &&
-                        <div className="artifact-margin-addition"></div>
-                    }
-                    { artifact.tag !== 'ibm_experimental' &&
-                        <div className="tag-container">
+                        <div className="artifact-tag-container">
                             { isStandardAccount && artifact.accountTag &&
                                 <div className="account-tag">{artifact.accountTagName}</div>
                             }
@@ -135,15 +110,15 @@ class DetailPageSidebar extends Component {
                         </div>
                     }
                     {children}
-                    <div className="description-tag-container">
+                    <div className="artifact-tag-container">
                         { artifact.docURL &&
-                            <a className="description-tag-docs-link" href={artifact.docURL} target="_new">{i18n.viewDocs}</a>
+                            <a className="bx--detail-page-sidebar-artifact-docs" href={artifact.docURL} target="_new">{i18n.viewDocs}</a>
                         }
                         { artifact.type === 'softlayer' && artifact.termsUrl &&
-                            <a className="description-tag-terms-link" href={artifact.termsUrl} target="_new">{i18n.viewTerms}</a>
+                            <a className="bx--detail-page-sidebar-artifact-terms" href={artifact.termsUrl} target="_new">{i18n.viewTerms}</a>
                         }
                     </div>
-                    <div className="details-container">
+                    <div className="bx--detail-page-sidebar-artifact-details-container">
                         { 
                             this.generateBlocks([
                                 { type: 'author', cssName: 'author', label: i18n.author, value: artifact.author },
@@ -163,4 +138,3 @@ class DetailPageSidebar extends Component {
 }
 
 export default DetailPageSidebar;
-    

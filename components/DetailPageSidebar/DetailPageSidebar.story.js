@@ -5,7 +5,6 @@ import { Notification } from 'carbon-components-react';
 
 
 const detailPageSidebarProps = {
-  
     artifact: {
         name: 'name',
         id: 'id',

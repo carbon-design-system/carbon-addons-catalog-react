@@ -2,84 +2,66 @@
 @import 'carbon-components/scss/globals/scss/layout';
 
 @include exports("detail-page-sidebar") {
-  .bx--detail-page-sidebar__container {
-    margin: 0 5% 0 0;
-    .details-description,
-    .tag-description {
-      font-size: 0.875rem;
-      word-wrap: break-word;
-    }
-    .tag-description {
-      margin: 0 0 2rem 0;
-      > span {
-        font-weight: 600;
-      }
-    }
-    .description-label {
-      margin: 0;
-      overflow: visible;
-      color: $support-04;
-    }
-    .description-tag-docs-link {
-      display: block;
-    }
-  }
-
-  .bx--artifact-details-sidebar-container {
-    .description-label {
-      margin: 0 0 1rem 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .details-container {
-      margin: 2rem 0 2rem 0;
-      .inset-container {
-        margin: 0 0 .5rem 0;
-        line-height: 1.5;
-        font-size: .875rem;
-        .label {
-          text-transform: uppercase;
-          min-width: 30%;
-          margin: 0 .5rem 0 0;
-          display: inline-block;
-        }
-        .value {
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          display: inline-block;
-          color: $support-04;
-        }
-      }
-    }
-  }
-
-  @include breakpoint(bp--sm--major) {
-    .bx--detail-page-sidebar__container {
+  .bx--detail-page-sidebar {
+    margin-right: 5%;
+    @include breakpoint(bp--sm--major) {
       width: 40%;
-      .inline-notification {
-        display: none;
-      }
     }
-    .bx--detail-main-content__container .inline-notification {
-      display: flex;
-    }
-    .bx--artifact-details-sidebar-container .details-container {
-      margin: 0;
-      .inset-container .label {
-        min-width: 45%;
-      }
-    }
-  }
-
-  @include breakpoint(bp--md--major) {
-    .bx--detail-page-sidebar__container {
+    @include breakpoint(bp--md--major) {
       width: 25%;
     }
-    .bx--detail-main-content__container {
-      width: 70%;
+  }
+  .bx--detail-page-sidebar-artifact-description,
+  .bx--detail-page-sidebar-artifact-tag {
+    font-size: rem(14px);
+    word-wrap: break-word;
+  }
+  .bx--detail-page-sidebar-artifact-tag {
+    margin-bottom: 2rem;
+    > span {
+      font-weight: 700;
     }
-    .bx--artifact-details-sidebar-container .details-container .inset-container .label {
+  }
+  .bx--detail-page-sidebar-artifact-name {
+    margin: 0;
+    overflow: visible;
+    color: $support-04;
+  }
+  .bx--detail-page-sidebar-artifact-docs {
+    display: block;
+  }
+  .bx--detail-page-sidebar-artifact-name {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bx--detail-page-sidebar-artifact-details-container {
+    margin: 2rem 0 2rem 0;
+    @include breakpoint(bp--sm--major) {
+      margin: 0;
+    }
+  }
+  .bx--detail-page-sidebar-artifact-prop {
+    margin-bottom: .5rem;
+    line-height: 1.5;
+    font-size: rem(14px);
+  }
+  .bx--detail-page-sidebar-artifact-label {
+    text-transform: uppercase;
+    min-width: 30%;
+    margin-right:.5rem;
+    display: inline-block;
+    @include breakpoint(bp--sm--major) {
+      min-width: 45%;
+    }
+    @include breakpoint(bp--md--major) {
       min-width: 30%;
     }
+  }
+  .bx--detail-page-sidebar-artifact-value {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    color: $support-04;
   }
 }
