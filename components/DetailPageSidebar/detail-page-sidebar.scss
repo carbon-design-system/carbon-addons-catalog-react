@@ -1,0 +1,67 @@
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/layout';
+
+@include exports("detail-page-sidebar") {
+  .bx--detail-page-sidebar {
+    margin-right: 5%;
+    @include breakpoint(bp--sm--major) {
+      width: 40%;
+    }
+    @include breakpoint(bp--md--major) {
+      width: 25%;
+    }
+  }
+  .bx--detail-page-sidebar-artifact-description,
+  .bx--detail-page-sidebar-artifact-tag {
+    font-size: rem(14px);
+    word-wrap: break-word;
+  }
+  .bx--detail-page-sidebar-artifact-tag {
+    margin-bottom: 2rem;
+    > span {
+      font-weight: 700;
+    }
+  }
+  .bx--detail-page-sidebar-artifact-name {
+    margin: 0;
+    overflow: visible;
+    color: $support-04;
+  }
+  .bx--detail-page-sidebar-artifact-docs {
+    display: block;
+  }
+  .bx--detail-page-sidebar-artifact-name {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bx--detail-page-sidebar-artifact-details-container {
+    margin: 2rem 0 2rem 0;
+    @include breakpoint(bp--sm--major) {
+      margin: 0;
+    }
+  }
+  .bx--detail-page-sidebar-artifact-prop {
+    margin-bottom: .5rem;
+    line-height: 1.5;
+    font-size: rem(14px);
+  }
+  .bx--detail-page-sidebar-artifact-label {
+    text-transform: uppercase;
+    min-width: 30%;
+    margin-right:.5rem;
+    display: inline-block;
+    @include breakpoint(bp--sm--major) {
+      min-width: 45%;
+    }
+    @include breakpoint(bp--md--major) {
+      min-width: 30%;
+    }
+  }
+  .bx--detail-page-sidebar-artifact-value {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    color: $support-04;
+  }
+}
