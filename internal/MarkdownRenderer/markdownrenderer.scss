@@ -1,0 +1,59 @@
+.bx--markdown-container {
+  line-height: 1.2858;
+  font-size: rem(14px);
+
+  .underline-text {
+    text-decoration: underline;
+  }
+
+  h1 {
+    margin: 0 0 15px 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.55rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: normal;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  p {
+    margin-bottom: .625rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
+
+  ul {
+    padding: 1rem;
+    list-style-type: disc;
+
+    ul {
+      list-style-type: none;
+
+      li::before {
+        content: "-";
+        padding-right: .3125rem;
+      }
+
+      li:last-child {
+        margin: 0;
+      }
+    }
+
+    > li {
+      margin-bottom: 1.5rem;
+      padding-left: .25rem;
+    }
+  }
+}
