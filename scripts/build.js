@@ -57,14 +57,6 @@ const copySass = () => {
   });
 };
 
-const compileSass = () => {
-  return sass.renderSync({
-    file: `${rootDir}/index.scss`,
-    includePaths: [`${rootDir}/node_modules`],
-    outFile: `${rootDir}/css/index.css`,
-  });
-};
-
 console.log('Deleting old build folders ...');
 
 rimraf(`${rootDir}/cjs`, err => {
@@ -84,9 +76,6 @@ rimraf(`${rootDir}/cjs`, err => {
 
       console.log('\nCopying Sass files ...');
       copySass();
-
-      console.log('\nCompiling Sass files ...');
-      compileSass();
     });
   });
 });
