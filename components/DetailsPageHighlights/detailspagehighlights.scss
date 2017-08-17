@@ -1,44 +1,49 @@
-.bx--artifact-details-highlight-container {
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/layout';
+@import 'carbon-components/scss/globals/scss/import-once';
 
-  margin-bottom: rem(35px);
-  display: flex;
-  flex-direction: column;
+@include exports("detail-highlight") {
+  .bx--artifact-details-highlight-container {
+    margin-bottom: rem(35px);
+    display: flex;
+    flex-direction: column;
 
-  &.bx--hide {
-    display: none;
-  }
+    &.bx--hide {
+      display: none;
+    }
 
-  & .bx--title-label {
-    font-size: rem(25px);
-    font-weight: 400;
-    line-height: 1.5;
-  }
+    & .bx--title-label {
+      font-size: rem(25px);
+      font-weight: 400;
+      line-height: 1.5;
+    }
 
-  & .bx--description-label {
-    font-size: rem(14px);
-    font-weight: 300;
-    margin: rem(25px) 0;
-  }
+    & .bx--description-label {
+      font-size: rem(14px);
+      font-weight: 300;
+      margin: rem(25px) 0;
+    }
 
-  @media (min-width: breakpoint('md')) {
-    & .bx--createArtifactFlexGroupRow {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    @media (min-width: breakpoint('md')) {
+      & .bx--createArtifactFlexGroupRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
     }
   }
-}
 
-.bx--artifact-details-description-container {
-  margin-bottom: 5px;
-  @media (min-width: breakpoint('md')) {
-    width: calc(100% - 100px);
+  .bx--artifact-details-description-container {
+    margin-bottom: 5px;
+    @media (min-width: breakpoint('md')) {
+      width: calc(100% - 100px);
+    }
   }
-}
 
-.bx--description-label,
-.bx--markdown-container h1 {
+  .bx--description-label,
+  .bx--markdown-container h1 {
     margin: 0 0 15px 0;
     padding: 0;
     overflow: hidden;
@@ -47,77 +52,77 @@
     font-weight: 300;
     line-height: 1.5;
     letter-spacing: normal;
-}
+  }
 
-.bx--artifact-details-highlight-container {
+  .bx--artifact-details-highlight-container {
+    .bx--markdown-container {
+      .underline-text {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .bx--artifact-details-description,
   .bx--markdown-container {
-    .underline-text {
-      text-decoration: underline;
-    }
-  }
-}
-
-
-.bx--artifact-details-description,
-.bx--markdown-container {
-  font-size: rem(14px);
-}
-
-.bx--artifact-details-description-content {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-
-  .bx--artifact-details-description-bullets {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     font-size: rem(14px);
-    margin: 25px 0 rem(24px);
-
-    @media screen and (min-width: breakpoint('md')) {
-      flex-direction: row;
-    }
   }
 
-  .bx--description-bullet-content {
+  .bx--artifact-details-description-content {
     width: 100%;
-    padding-left: rem(20px);
-    margin-bottom: rem(24px);
+    height: auto;
+    overflow: hidden;
 
-    @media screen and (min-width: breakpoint('md')) {
-      width: calc(50% - rem(20px));
+    .bx--artifact-details-description-bullets {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      font-size: rem(14px);
+      margin: 25px 0 rem(24px);
+
+      @media screen and (min-width: breakpoint('md')) {
+        flex-direction: row;
+      }
     }
-  }
 
-  .bx--description-bullet-content:nth-child(2n+1) {
-    width: 100%;
-    padding-right: rem(16px);
+    .bx--description-bullet-content {
+      width: 100%;
+      padding-left: rem(20px);
+      margin-bottom: rem(24px);
 
-    @media screen and (min-width: breakpoint('md')) {
-      width: calc(50% - rem(36px));
+      @media screen and (min-width: breakpoint('md')) {
+        width: calc(50% - rem(20px));
+      }
     }
-  }
 
-  .bx--bullet-title {
-    display: list-item;
-    list-style-position: outside;
-    font-weight: bold;
+    .bx--description-bullet-content:nth-child(2n + 1) {
+      width: 100%;
+      padding-right: rem(16px);
 
-    & + .bx--bullet-description {
-      display: block;
-      list-style-position: inherit;
+      @media screen and (min-width: breakpoint('md')) {
+        width: calc(50% - rem(36px));
+      }
     }
-  }
 
-  .bx--bullet-description {
-    display: list-item;
-    list-style-position: outside;
-    margin: rem(8px) 0 0;
-    text-align: left;
+    .bx--bullet-title {
+      display: list-item;
+      list-style-position: outside;
+      font-weight: bold;
 
-    @media screen and (min-width: breakpoint('md')) {
-      margin: rem(8px) rem(24px) 0 0;
+      & + .bx--bullet-description {
+        display: block;
+        list-style-position: inherit;
+      }
+    }
+
+    .bx--bullet-description {
+      display: list-item;
+      list-style-position: outside;
+      margin: rem(8px) 0 0;
+      text-align: left;
+
+      @media screen and (min-width: breakpoint('md')) {
+        margin: rem(8px) rem(24px) 0 0;
+      }
     }
   }
 }

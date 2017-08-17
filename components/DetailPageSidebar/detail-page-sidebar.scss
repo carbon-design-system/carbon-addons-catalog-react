@@ -1,5 +1,7 @@
 @import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/vars';
 @import 'carbon-components/scss/globals/scss/layout';
+@import 'carbon-components/scss/globals/scss/import-once';
 
 @include exports("detail-page-sidebar") {
   .bx--detail-page-sidebar {
@@ -49,7 +51,7 @@
   .bx--detail-page-sidebar-artifact-label {
     text-transform: uppercase;
     min-width: 30%;
-    margin-right:.5rem;
+    margin-right: .5rem;
     display: inline-block;
     @include breakpoint(bp--sm--major) {
       min-width: 45%;

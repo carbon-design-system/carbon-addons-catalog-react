@@ -3,19 +3,18 @@ import React from 'react';
 import renderMarkdown from './markdown-parser';
 
 const defaultProps = {
-    content: '',
+  content: '',
 };
 
 const propTypes = {
-    content: PropTypes.string,
+  content: PropTypes.string,
 };
 
 const MarkdownRenderer = ({ content }) => {
-    return <div dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }} />;	
-}
+  return <div dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }} />;
+};
 
 MarkdownRenderer.defaultProps = defaultProps;
 MarkdownRenderer.propTypes = propTypes;
 
 export default MarkdownRenderer;
-
