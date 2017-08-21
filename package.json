@@ -1,6 +1,6 @@
 {
   "name": "carbon-addons-bluemix-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bluemix specific components",
   "main": "cjs/index.js",
   "module": "es/index.js",
@@ -44,15 +44,9 @@
     "build": "node scripts/build.js",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "files": [
-    "cjs/**/*",
-    "es/**/*",
-    "scss/**/*"
-  ],
+  "files": ["cjs/**/*", "es/**/*", "scss/**/*"],
   "eslintConfig": {
-    "extends": [
-      "prettier"
-    ],
+    "extends": ["prettier"],
     "parserOptions": {
       "ecmaVersion": 2016,
       "sourceType": "module"
