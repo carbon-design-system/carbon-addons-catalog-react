@@ -8,6 +8,7 @@
   "author": "chrisdhanaraj <adhanaraj@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "classnames": "^2.2.5",
     "markdown-it": "^8.3.1",
     "markdown-it-sup": "^1.0.0"
   },
@@ -34,8 +35,8 @@
     "style-loader": "^0.18.2"
   },
   "peerDependencies": {
-    "carbon-components-react": "^3.4.6",
     "carbon-components": "^7.12.1",
+    "carbon-components-react": "^3.4.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -43,9 +44,15 @@
     "build": "node scripts/build.js",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "files": ["cjs/**/*", "es/**/*", "scss/**/*"],
+  "files": [
+    "cjs/**/*",
+    "es/**/*",
+    "scss/**/*"
+  ],
   "eslintConfig": {
-    "extends": ["prettier"],
+    "extends": [
+      "prettier"
+    ],
     "parserOptions": {
       "ecmaVersion": 2016,
       "sourceType": "module"
