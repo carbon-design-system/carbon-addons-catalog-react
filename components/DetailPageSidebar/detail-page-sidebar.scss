@@ -13,10 +13,23 @@
       width: 25%;
     }
   }
+  .bx--detail-page-sidebar-artifact {
+    @include breakpoint(bp--sm--major) {
+      margin-bottom: 35%;
+    }
+    @include breakpoint(bp--md--major) {
+      margin-bottom: 40%;
+    }
+  }
+  .artifact-tag-container {
+    margin-bottom: 2rem;
+  }
+
   .bx--detail-page-sidebar-artifact-description,
   .bx--detail-page-sidebar-artifact-tag {
     font-size: rem(14px);
     word-wrap: break-word;
+    margin-bottom: 2rem;
   }
   .bx--detail-page-sidebar-artifact-tag {
     margin-bottom: 2rem;
@@ -27,10 +40,10 @@
   .bx--detail-page-sidebar-artifact-name {
     margin: 0;
     overflow: visible;
-    color: $support-04;
   }
   .bx--detail-page-sidebar-artifact-docs {
-    display: block;
+    display: inline-block;
+    margin-right: 3.5rem;
   }
   .bx--detail-page-sidebar-artifact-name {
     margin-bottom: 1rem;
@@ -50,14 +63,14 @@
   }
   .bx--detail-page-sidebar-artifact-label {
     text-transform: uppercase;
-    min-width: 30%;
+    min-width: 40%;
     margin-right: .5rem;
     display: inline-block;
     @include breakpoint(bp--sm--major) {
       min-width: 45%;
     }
     @include breakpoint(bp--md--major) {
-      min-width: 30%;
+      min-width: 50%;
     }
   }
   .bx--detail-page-sidebar-artifact-value {

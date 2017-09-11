@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import DetailsPageHighlights from './DetailsPageHighlights';
+import DetailPageHighlights from './DetailPageHighlights';
+import { Notification } from 'carbon-components-react';
 
 const MarkDown = '# Block Storage ' + '\nGet local disk performance with SAN persistence and durability. Increase storage capacity available to your Bluemix Virtual and Bare Metal Servers with a maximum of *48k IOPs*. Deploy flash-backed block storage in granular increments–from 1000GB to 12000GB–and customize it all with a variety of capabilities. Choose Endurance tiers for simple, predefined, per-GB pricing—ideal for most general purpose workloads. Or, build a fine-tuned environment with allocated IOPS with Performance options—ideal for well-understood workload requirements.'
 
@@ -61,11 +62,16 @@ const additionalProps = {
   markdown: MarkDown,
 }
 
-storiesOf('DetailsPageHighlights', module)
+storiesOf('DetailPageHighlights', module)
   .addWithInfo(
     'Default',
     `
-      DetailsPageHighlights is used to display page information.
+      DetailPageHighlights is used to display page information.
     `,
-    () => <DetailsPageHighlights {...additionalProps} />,
-  );
+    () => <DetailPageHighlights {...additionalProps} />,
+  )
+  .addWithInfo('with notification', () => (
+    <DetailPageHighlights {...additionalProps}>
+      <Notification title="NotificationMessage" kind="info" />
+    </DetailPageHighlights>
+  ));
