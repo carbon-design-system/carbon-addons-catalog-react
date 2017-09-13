@@ -1,10 +1,11 @@
 {
   "name": "carbon-addons-bluemix-react",
-  "version": "0.0.3",
+  "version": "0.0.0-development",
   "description": "Bluemix specific components",
   "main": "cjs/index.js",
   "module": "es/index.js",
-  "repository": "https://github.com/carbon-design-system/carbon-addons-bluemix-react",
+  "repository":
+    "https://github.com/carbon-design-system/carbon-addons-bluemix-react",
   "author": "chrisdhanaraj <adhanaraj@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
@@ -13,6 +14,8 @@
     "markdown-it-sup": "^1.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^3.2.0",
+    "@commitlint/config-angular": "^3.1.1",
     "@storybook/addon-centered": "^3.1.2",
     "@storybook/addon-info": "^3.1.6",
     "@storybook/react": "^3.1.6",
@@ -26,11 +29,13 @@
     "eslint-config-prettier": "^2.2.0",
     "fs-extra": "^4.0.1",
     "globby": "^6.1.0",
+    "husky": "^0.14.3",
     "ncp": "^2.0.0",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "sass-loader": "^6.0.6",
+    "semantic-release": "^7.0.2",
     "storybook-addon-a11y": "^3.0.0",
     "style-loader": "^0.18.2"
   },
@@ -41,8 +46,12 @@
     "react-dom": "^15.6.1"
   },
   "scripts": {
+    "prepublish": "npm build",
+    "commitmsg": "commitlint --extends=@commitlint/config-angular -e",
     "build": "node scripts/build.js",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "semantic-release":
+      "semantic-  release pre && npm publish && semantic-release post"
   },
   "files": ["cjs/**/*", "es/**/*", "scss/**/*"],
   "eslintConfig": {
