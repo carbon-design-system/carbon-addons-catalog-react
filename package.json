@@ -47,7 +47,7 @@
   },
   "scripts": {
     "prepublish": "npm build",
-    "commit-msg": "commitlint",
+    "commitmsg": "commitlint --extends=@commitlint/config-angular -e",
     "build": "node scripts/build.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "semantic-release":
