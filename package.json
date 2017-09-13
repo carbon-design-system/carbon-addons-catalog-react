@@ -54,17 +54,11 @@
     "build": "node scripts/build.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "semantic-release":
-      "semantic-  release pre && npm publish && semantic-release post"
+      "semantic-release pre && npm publish && semantic-release post"
   },
-  "files": [
-    "cjs/**/*",
-    "es/**/*",
-    "scss/**/*"
-  ],
+  "files": ["cjs/**/*", "es/**/*", "scss/**/*"],
   "eslintConfig": {
-    "extends": [
-      "prettier"
-    ],
+    "extends": ["prettier"],
     "parserOptions": {
       "ecmaVersion": 2016,
       "sourceType": "module"
