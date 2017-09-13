@@ -7,11 +7,13 @@ const propTypes = {
   i18n: PropTypes.object,
   bullets: PropTypes.array,
   markdown: PropTypes.string,
+  children: PropTypes.node
 };
 
-const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown }) => {
+const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) => {
   return (
     <div className="bx--artifact-details-highlight-container">
+      {children}
       {markdown &&
         <div className="bx--createArtifactFlexGroupColumn bx--artifact-details-description-content bx--markdown-container">
           <MarkdownRenderer content={markdown} />

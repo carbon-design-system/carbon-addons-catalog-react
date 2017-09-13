@@ -6,10 +6,12 @@ import { Notification } from 'carbon-components-react';
 
 const detailPageSidebarProps = {
     artifact: {
-        name: 'name',
+        name: 'Microservice Name',
+        displayName: true,
         id: 'id',
-        tag: 'ibm_created',
+        tags: ['IBM', 'Deprecated', 'Private', 'Beta'],
         tagName: 'IBM',
+        deprecationUrl: '#',
         description: 'This is a sample description of the service',
         accountType: 'Standard',
         type: 'type',
@@ -22,8 +24,8 @@ const detailPageSidebarProps = {
         regionName: 'US-south',
     },
     i18n: {
-        viewDocs: 'Docs',
-        viewTerms: 'Terms',
+        viewDocs: 'View Docs',
+        viewTerms: 'View Terms',
         author: 'Author',
         version: 'Version',
         createdDate: 'Created date',
@@ -32,6 +34,7 @@ const detailPageSidebarProps = {
         service: 'Service',
         location: 'Location',
         region: 'Region',
+        deprecationWarning: 'Deprecated',
     }
 };
 
