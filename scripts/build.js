@@ -36,7 +36,7 @@ const copySass = () => {
   const allCopy = [];
 
   globby([
-    `${rootDir}/{components,internal,/**/*.scss`,
+    `${rootDir}/{components,internal}/**/*.scss`,
     'index.scss',
   ]).then(paths => {
     paths.forEach(path => {
