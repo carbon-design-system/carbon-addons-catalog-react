@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import DetailPageHighlights from './DetailPageHighlights';
-import { Notification } from 'carbon-components-react';
 
 const MarkDown = '# Block Storage ' + '\nGet local disk performance with SAN persistence and durability. Increase storage capacity available to your Bluemix Virtual and Bare Metal Servers with a maximum of *48k IOPs*. Deploy flash-backed block storage in granular increments–from 1000GB to 12000GB–and customize it all with a variety of capabilities. Choose Endurance tiers for simple, predefined, per-GB pricing—ideal for most general purpose workloads. Or, build a fine-tuned environment with allocated IOPS with Performance options—ideal for well-understood workload requirements.'
 
@@ -41,6 +40,14 @@ const additionalProps = {
   i18n: {
     'feature': 'Features',
     'screenshots': 'Images',
+    'notification': {
+                      onCloseButtonClick: action('onCloseButtonClick'),
+                      className: 'some-class',
+                      title: 'this is a title',
+                      subtitle: 'subtitle',
+                      iconDescription: 'describes the close button'
+                    },
+    'kindOfNotification': 'info',
   },
   bullets: [
               { 'title': 'Flexible customization',
@@ -70,8 +77,9 @@ storiesOf('DetailPageHighlights', module)
     `,
     () => <DetailPageHighlights {...additionalProps} />,
   )
-  .addWithInfo('with notification', () => (
+  .addWithInfo('with children', () => (
     <DetailPageHighlights {...additionalProps}>
-      <Notification title="NotificationMessage" kind="info" />
+      <p>More information on Block Storage: Get local disk performance with SAN persistence and durability. Increase storage capacity available to your Bluemix Virtual and Bare Metal Servers with a maximum of *48k IOPs*. Deploy flash-backed block storage in granular increments–from 1000GB to 12000GB–and customize it all with a variety of capabilities. Choose Endurance tiers for simple, predefined, per-GB pricing—ideal for most general purpose workloads. Or, build a fine-tuned environment with allocated IOPS with Performance options—ideal for well-understood workload requirements.</p>
+      <p>Perhaps next time you will add some images too</p>
     </DetailPageHighlights>
   ));
