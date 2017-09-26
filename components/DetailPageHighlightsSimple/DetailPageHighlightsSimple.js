@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import MarkdownRenderer from '../../internal/MarkdownRenderer/MarkdownRenderer';
 import { Notification } from 'carbon-components-react';
 
 const propTypes = {
@@ -11,16 +10,11 @@ const propTypes = {
   children: PropTypes.node
 };
 
-const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) => {
+const DetailsPageHighlightsSimple = ({ artifact, i18n, bullets, markdown, children }) => {
   return (
     <div className="bx--artifact-details-highlight-container">
       {i18n.notification &&
         <Notification {...i18n.notification} kind={i18n.kindOfNotification} />
-      }
-      {markdown &&
-        <div className="bx--createArtifactFlexGroupColumn bx--artifact-details-description-content bx--markdown-container">
-          <MarkdownRenderer content={markdown} />
-        </div>
       }
       {artifact.longDescription &&
         <div className="bx--artifact-details-description">{artifact.longDescription}</div>
@@ -55,6 +49,6 @@ const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) 
   );
 };
 
-DetailsPageHighlights.propTypes = propTypes;
+DetailsPageHighlightsSimple.propTypes = propTypes;
 
-export default DetailsPageHighlights;
+export default DetailsPageHighlightsSimple;
