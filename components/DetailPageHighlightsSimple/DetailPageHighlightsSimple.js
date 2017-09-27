@@ -6,11 +6,10 @@ const propTypes = {
   artifact: PropTypes.object,
   i18n: PropTypes.object,
   bullets: PropTypes.array,
-  markdown: PropTypes.string,
   children: PropTypes.node
 };
 
-const DetailsPageHighlightsSimple = ({ artifact, i18n, bullets, markdown, children }) => {
+const DetailsPageHighlightsSimple = ({ artifact, i18n, bullets, children }) => {
   return (
     <div className="bx--artifact-details-highlight-container">
       {i18n.notification &&
