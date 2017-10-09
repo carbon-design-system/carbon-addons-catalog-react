@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Notification } from 'carbon-components-react';
+import { Notification } from '../../index';
 
 const propTypes = {
   artifact: PropTypes.object,
