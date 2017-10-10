@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Tag } from '../../index';
+import { Tag } from 'carbon-components-react';
 
 class DetailPageSidebar extends Component {
   static propTypes = {
