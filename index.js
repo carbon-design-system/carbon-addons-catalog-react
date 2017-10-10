@@ -1,5 +1,5 @@
-import Notification from './node_modules/carbon-components-react/cjs/components/Notification';
-import Tag from './node_modules/carbon-components-react/cjs/components/Tag';
+import Notification from 'carbon-components-react/cjs/components/Notification';
+import Tag from 'carbon-components-react/cjs/components/Tag';
 
 export {
   Notification,
