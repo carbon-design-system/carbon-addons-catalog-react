@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import MarkdownRenderer from '../../internal/MarkdownRenderer/MarkdownRenderer';
-import { Notification } from '../../index';
+import { Notification } from '../carbon';
 
 const propTypes = {
   artifact: PropTypes.object,
