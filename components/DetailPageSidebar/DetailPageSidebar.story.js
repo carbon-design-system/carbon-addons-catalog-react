@@ -17,6 +17,8 @@ const detailPageSidebarProps = {
         type: 'type',
         docURL: 'www.google.com',
         termsUrl: 'www.google.com',
+        onClickDocs:function() {console.log('Docs Link');},
+        onClickTerms:function() {console.log('Terms Link');},
         version: '1.0',
         author: 'author',
         createdDate: '1/1/2017',

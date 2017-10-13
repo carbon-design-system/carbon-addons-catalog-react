@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Tag } from '../carbon';
+import { Tag, Link } from '../carbon';
 
 class DetailPageSidebar extends Component {
   static propTypes = {
@@ -15,8 +15,8 @@ class DetailPageSidebar extends Component {
       accountTagName: PropTypes.string,
       availabilityTagName: PropTypes.string,
       type: PropTypes.string,
-      docURL: PropTypes.string,
-      termsUrl: PropTypes.string,
+      onClickDocs: PropTypes.func,
+      onClickTerms: PropTypes.func,
       version: PropTypes.string,
       author: PropTypes.string,
       createdDate: PropTypes.string,
@@ -104,10 +104,14 @@ class DetailPageSidebar extends Component {
           </div>
           <div className="artifact-tag-container">
             { artifact.docURL &&
-              <a className="bx--detail-page-sidebar-artifact-docs" href={artifact.docURL} target="_new">{i18n.viewDocs}</a>
+              <Link href={artifact.docURL} onClick={artifact.onClickDocs} className="bx--detail-page-sidebar-artifact-docs" target="_blank">
+                {i18n.viewDocs}
+              </Link>
             }
             { artifact.termsUrl &&
-              <a className="bx--detail-page-sidebar-artifact-terms" href={artifact.termsUrl} target="_new">{i18n.viewTerms}</a>
+              <Link href={artifact.termsUrl} onClick={artifact.onClickTerms} className="bx--detail-page-sidebar-artifact-terms" target="_blank">
+                {i18n.viewTerms}
+              </Link>
             }
           </div>
           <div className="bx--detail-page-sidebar-artifact-details-container">
