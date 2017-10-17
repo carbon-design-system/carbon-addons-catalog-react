@@ -1,11 +1,11 @@
 {
-  "name": "carbon-addons-bluemix-react",
+  "name": "carbon-addons-catalog-react",
   "version": "0.0.0-development",
   "description": "Bluemix specific components",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "repository":
-    "https://github.com/carbon-design-system/carbon-addons-bluemix-react",
+    "https://github.com/carbon-design-system/carbon-addons-catalog-react",
   "author": "chrisdhanaraj <adhanaraj@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
