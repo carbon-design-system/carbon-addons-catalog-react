@@ -45,7 +45,7 @@ class DetailPageSidebar extends Component {
     
   generateArtifactBlock(obj) {
     return (
-      <div className={`bx--detail-page-sidebar-artifact-prop ${ obj.cssName }-container`}>
+      <div className={`bx--detail-page-sidebar-artifact-prop ${ obj.cssName }-container`} key={ obj.value }>
         <span className={ `bx--detail-page-sidebar-artifact-label ${ obj.cssName }-label` }>{ obj.label }</span>
         <span className={ `bx--detail-page-sidebar-artifact-value ${ obj.cssName }-value` }>{ obj.value }</span>
       </div>
@@ -67,11 +67,11 @@ class DetailPageSidebar extends Component {
         if (tag.match(/^(IBM|BETA|THIRD-PARTY|LOCAL|DEDICATED|CUSTOM|COMMUNITY|PRIVATE)$/i)) {
             allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type={tag.toLowerCase()}> {tag} </Tag>);
         } else if (this.props.artifact.deprecationUrl && tag.match(/^(DEPRECATED)$/i)) {
-          allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type={tag.toLowerCase()} dangerouslySetInnerHTML={{ __html: this.props.i18n.deprecationWarning }}/>);
+          allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type="custom"> {this.props.i18n.deprecationWarning} </Tag>);
         } else if (tag.match(/^(EXPERIMENTAL)$/i)) {
           allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type={tag.toLowerCase()}> {tag.toLowerCase()} </Tag>);
         } else {
-          allTags.push(<Tag key={tag.toLowerCase()} className='custom ${tag.toLowerCase()}' type={tag.toLowerCase()}> {tag.toLowerCase()} </Tag>);
+          allTags.push(<Tag key={tag.toLowerCase()} className='custom ${tag.toLowerCase()}' type="custom"> {tag} </Tag>);
         }
         if (isStandardAccount && this.props.artifact.accountTag) {
           allTags.push(<Tag key="account-tag" className="custom account-tag" type="account-tag"> {this.props.artifact.accountTagName}</Tag>)

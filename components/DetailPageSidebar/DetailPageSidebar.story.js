@@ -9,7 +9,7 @@ const detailPageSidebarProps = {
         name: 'Microservice Name',
         displayName: true,
         id: 'id',
-        tags: ['IBM', 'Deprecated', 'Private', 'Beta'],
+        tags: ['IBM', 'Deprecated', 'Private', 'Beta', 'Lite'],
         tagName: 'IBM',
         deprecationUrl: '#',
         description: 'This is a sample description of the service',
