@@ -15,7 +15,7 @@
 
     & .bx--title-label {
       font-size: rem(25px);
-      font-weight: 400;
+      font-weight: 100;
       line-height: 1.5;
     }
 
@@ -71,11 +71,13 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    margin-top: 1.5em;
 
     .bx--artifact-details-description-bullets {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+
       font-size: rem(14px);
       margin: 25px 0 rem(24px);
 
@@ -85,10 +87,11 @@
     }
 
     .bx--description-bullet-content {
+      list-style: disc outside none;
       width: 100%;
       padding-left: rem(20px);
       margin-bottom: rem(24px);
-
+      
       @media screen and (min-width: breakpoint('md')) {
         width: calc(50% - rem(20px));
       }

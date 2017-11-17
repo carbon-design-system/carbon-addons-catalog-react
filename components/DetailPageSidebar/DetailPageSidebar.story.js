@@ -12,7 +12,7 @@ const detailPageSidebarProps = {
         tags: ['IBM', 'Deprecated', 'Private', 'Beta', 'Lite'],
         tagName: 'IBM',
         deprecationUrl: '#',
-        description: 'This is a sample description of the service',
+        description: 'This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service',
         accountType: 'Standard',
         type: 'type',
         docURL: 'www.google.com',

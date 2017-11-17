@@ -29,18 +29,18 @@ const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) 
         // Features
         <div className="bx--createArtifactFlexGroupColumn bx--artifact-details-description-content">
           <div className="bx--title-label">{i18n.feature}</div>
-          <div className="bx--artifact-details-description-bullets">
+          <ul className="bx--artifact-details-description-bullets">
             {bullets.map((bullet, index) =>
-              <div key={index} className="bx--description-bullet-content">
+              <li key={index} className="bx--description-bullet-content">
                 {bullet.title &&
                   <div className="bx--bullet-title">{bullet.title}</div>
                 }
                 {bullet.description &&
                   <div className="bx--bullet-description">{bullet.description}</div>
                 }
-              </div>
+              </li>
             )}
-          </div>
+          </ul>
         </div>
       }
       {artifact.mediaData &&
