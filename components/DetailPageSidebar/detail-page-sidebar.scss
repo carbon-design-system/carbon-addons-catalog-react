@@ -7,10 +7,10 @@
   .bx--detail-page-sidebar {
     margin-right: 5%;
     @include breakpoint(bp--sm--major) {
-      width: 45%;
+      width: 50%;
     }
     @include breakpoint(bp--md--major) {
-      width: 50%;
+      width: 75%;
     }
   }
   .bx--detail-page-sidebar-artifact {
