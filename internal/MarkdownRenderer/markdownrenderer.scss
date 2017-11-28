@@ -28,7 +28,11 @@
     }
 
     p {
-      margin-bottom: 1.5em;
+      margin-bottom: .625rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     sup {

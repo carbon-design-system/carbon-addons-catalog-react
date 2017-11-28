@@ -42,11 +42,6 @@
     }
   }
 
-  .bx--artifact-details-description-content {
-    margin-top: 0;
-    line-height: 1.5;
-  }
-
   .bx--description-label,
   .bx--markdown-container h1 {
     margin: 0 0 15px 0;
@@ -70,7 +65,6 @@
   .bx--artifact-details-description,
   .bx--markdown-container {
     font-size: rem(14px);
-    line-height: 1.5;
   }
 
   .bx--artifact-details-description-content {
@@ -80,14 +74,15 @@
     margin-top: 1.5em;
 
     .bx--artifact-details-description-bullets {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+
       font-size: rem(14px);
       margin: 25px 0 rem(24px);
 
       @media screen and (min-width: breakpoint('md')) {
         flex-direction: row;
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
       }
     }
 
