@@ -6,7 +6,7 @@
 @include exports("detail-page-sidebar") {
   .bx--detail-page-sidebar {
     margin-right: 5%;
-    max-width: 30%;
+    max-width: 35%;
   }
   .bx--detail-page-sidebar-artifact {
     @include breakpoint(bp--sm--major) {
