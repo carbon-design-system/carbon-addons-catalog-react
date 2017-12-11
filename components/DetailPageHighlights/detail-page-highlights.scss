@@ -42,11 +42,6 @@
     }
   }
 
-  .bx--artifact-details-description-content {
-    margin-top: 0;
-    line-height: 1.5;
-  }
-
   .bx--description-label,
   .bx--markdown-container h1 {
     margin: 0 0 15px 0;
@@ -77,7 +72,6 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    margin-top: 1.5em;
 
     .bx--artifact-details-description-bullets {
       font-size: rem(14px);
