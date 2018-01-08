@@ -71,11 +71,11 @@
   .bx--artifact-details-description-content {
     width: 100%;
     height: auto;
-    overflow: hidden;
 
     .bx--artifact-details-description-bullets {
       font-size: rem(14px);
       margin: 25px 0 rem(24px);
+      list-style: disc outside none;
 
       @media screen and (min-width: breakpoint('md')) {
         flex-direction: row;
@@ -86,9 +86,8 @@
     }
 
     .bx--description-bullet-content {
-      list-style: disc outside none;
       width: 100%;
-      padding-left: rem(20px);
+      margin-left: rem(20px);
       margin-bottom: rem(24px);
       
       @media screen and (min-width: breakpoint('md')) {
@@ -106,23 +105,11 @@
     }
 
     .bx--bullet-title {
-      display: list-item;
-      list-style-position: outside;
       font-weight: bold;
 
       & + .bx--bullet-description {
         display: block;
         list-style-position: inherit;
-      }
-    }
-
-    .bx--bullet-description {
-      display: list-item;
-      list-style-position: outside;
-      margin: rem(8px) 0 0;
-      text-align: left;
-
-      @media screen and (min-width: breakpoint('md')) {
         margin: rem(8px) rem(24px) 0 0;
       }
     }
