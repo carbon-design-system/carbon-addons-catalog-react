@@ -17,18 +17,21 @@ const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) 
       {i18n.notification &&
         <Notification {...i18n.notification} kind={i18n.kindOfNotification} />
       }
-      {markdown &&
-        <div className="bx--createArtifactFlexGroupColumn bx--artifact-details-description-content bx--markdown-container">
-          <MarkdownRenderer content={markdown} />
-        </div>
-      }
-      {artifact.longDescription &&
-        <div className="bx--artifact-details-description">{artifact.longDescription}</div>
-      }
+      <div className="bx--createArtifactFlexGroupColumn bx--artifact-details-description-content bx--markdown-container">
+        <div className="bx--title-label">{i18n.topHeader}</div>
+        {markdown &&
+          // Description via markdown
+          <MarkdownRenderer className="bx--artifact-details-description" content={markdown} />
+        }
+        {artifact.longDescription &&
+          // Description via object
+          <div className="bx--artifact-details-description">{artifact.longDescription}</div>
+        }
+      </div>
       {bullets &&
         // Features
         <div className="bx--createArtifactFlexGroupColumn bx--artifact-details-description-content">
-          <div className="bx--title-label">{i18n.feature}</div>
+          <div className="bx--title-label">{i18n.middleHeader}</div>
           <ul className="bx--artifact-details-description-bullets">
             {bullets.map((bullet, index) =>
               <li key={index} className="bx--description-bullet-content">
@@ -46,7 +49,7 @@ const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) 
       {artifact.mediaData &&
         // Screenshots
         <div className="bx--createArtifactFlexGroupColumn">
-          <div className="bx--title-label">{i18n.screenshots}</div>
+          <div className="bx--title-label">{i18n.bottomHeader}</div>
           <div className="bx--description-label">{artifact.mediaDesc}</div>
         </div>
       }

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import DetailPageHighlights from './DetailPageHighlights';
 
-const MarkDown = '# Block Storage ' + '\nGet local disk performance with SAN persistence and durability. Increase storage capacity available to your Bluemix Virtual and Bare Metal Servers with a maximum of *48k IOPs*. Deploy flash-backed block storage in granular increments–from 1000GB to 12000GB–and customize it all with a variety of capabilities. Choose Endurance tiers for simple, predefined, per-GB pricing—ideal for most general purpose workloads. Or, build a fine-tuned environment with allocated IOPS with Performance options—ideal for well-understood workload requirements.'
+const MarkDown = 'Get local disk performance with SAN persistence and durability. Increase storage capacity available to your Bluemix Virtual and Bare Metal Servers with a maximum of *48k IOPs*. Deploy flash-backed block storage in granular increments–from 1000GB to 12000GB–and customize it all with a variety of capabilities. Choose Endurance tiers for simple, predefined, per-GB pricing—ideal for most general purpose workloads. Or, build a fine-tuned environment with allocated IOPS with Performance options—ideal for well-understood workload requirements.'
 
 const additionalProps = {
   artifact: {
@@ -38,8 +38,9 @@ const additionalProps = {
     mediaDesc: 'Click an image to enlarge and view screen captures, slides, or videos. Screen caps show the user interface for the service after it has been provisioned.',
   },
   i18n: {
-    'feature': 'Features',
-    'screenshots': 'Images',
+    'topHeader': 'Overview',
+    'middleHeader': 'Features',
+    'bottomHeader': 'Images',
     'notification': {
                       onCloseButtonClick: action('onCloseButtonClick'),
                       className: 'some-class',

@@ -16,13 +16,12 @@
     & .bx--title-label {
       font-size: rem(25px);
       font-weight: 100;
-      line-height: 1.5;
+      line-height: 3;
     }
 
     & .bx--description-label {
       font-size: rem(14px);
       font-weight: 300;
-      margin: rem(25px) 0;
     }
 
     @media (min-width: breakpoint('md')) {
@@ -71,18 +70,11 @@
   .bx--artifact-details-description-content {
     width: 100%;
     height: auto;
+    line-height: 1.5;
 
     .bx--artifact-details-description-bullets {
       font-size: rem(14px);
-      margin: 25px 0 rem(24px);
       list-style: disc outside none;
-
-      @media screen and (min-width: breakpoint('md')) {
-        flex-direction: row;
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-      }
     }
 
     .bx--description-bullet-content {
