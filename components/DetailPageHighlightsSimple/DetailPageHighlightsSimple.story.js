@@ -35,8 +35,9 @@ const additionalProps = {
     mediaDesc: 'Click an image to enlarge and view screen captures, slides, or videos. Screen caps show the user interface for the service after it has been provisioned.',
   },
   i18n: {
-    'feature': 'Features',
-    'screenshots': 'Images',
+    'topHeader': 'Overview',
+    'middleHeader': 'Features',
+    'bottomHeader': 'Images',
     'notification': {
                       onCloseButtonClick: action('onCloseButtonClick'),
                       className: 'some-class',
