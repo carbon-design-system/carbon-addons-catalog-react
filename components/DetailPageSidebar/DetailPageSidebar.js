@@ -1,134 +1,92 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import classnames from 'classnames';
+import MarkdownRenderer from '../../internal/MarkdownRenderer/MarkdownRenderer';
 import { Tag, Link } from '../carbon';
 
 class DetailPageSidebar extends Component {
   static propTypes = {
-    artifact: PropTypes.shape({
-      name: PropTypes.string,
-      displayName: PropTypes.bool,
-      id: PropTypes.string,
-      tags: PropTypes.array,
-      description: PropTypes.string,
-      accountType: PropTypes.string,
-      accountTagName: PropTypes.string,
-      availabilityTagName: PropTypes.string,
-      type: PropTypes.string,
-      onClickDocs: PropTypes.func,
-      onClickTerms: PropTypes.func,
-      version: PropTypes.string,
+    displayDetails: PropTypes.bool,
+    details: {
+      header: PropTypes.string,
       author: PropTypes.string,
+      version: PropTypes.string,
       createdDate: PropTypes.string,
       publishDate: PropTypes.string,
       locationName: PropTypes.string,
       regionName: PropTypes.string,
-      }),
-      i18n: PropTypes.shape({
-        deprecationWarning: PropTypes.string,
-        experimentalDesc: PropTypes.string,
-        viewDocs: PropTypes.string,
-        viewTerms: PropTypes.string,
-        author: PropTypes.string,
-        version: PropTypes.string,
-        createdDate: PropTypes.string,
-        publishDate: PropTypes.string,
-        type: PropTypes.string,
-        boilerplate: PropTypes.string,
-        runtime: PropTypes.string,
-        service: PropTypes.string,
-        location: PropTypes.string,
-        region: PropTypes.string,
-      }),
+      lastUpdated: PropTypes.string,
+      type: PropTypes.string,
+    },
+    sidebarSections: PropTypes.object, // in the form { [header: xxxx, content: xxxx, links: [] ]}
     children: PropTypes.node
   };
     
-  generateArtifactBlock(obj) {
+  generateSideBarBlock(obj) {
     return (
-      <div className={`bx--detail-page-sidebar-artifact-prop ${ obj.cssName }-container`} key={ obj.value }>
-        <span className={ `bx--detail-page-sidebar-artifact-label ${ obj.cssName }-label` }>{ obj.label }</span>
-        <span className={ `bx--detail-page-sidebar-artifact-value ${ obj.cssName }-value` }>{ obj.value }</span>
+      <div className="bx--detail-page-sidebar-artifact">
+        <h2 className="bx--detail-page-sidebar-artifact-name">{obj.header}<hr/></h2>
+        <div className="bx--detail-page-sidebar-artifact-details-container">
+          <MarkdownRenderer content={obj.content} />
+        </div>
       </div>
     )
   }
 
-  generateBlocks(opts) {
+  generateSideBarBlocks(opts) {
     return opts.map(obj => {
-      if (this.props.artifact[obj.type]) {
-        return this.generateArtifactBlock(obj);
-      }
+      return this.generateSideBarBlock(obj);
     });
   }
 
-  generateTags(tags, isStandardAccount) {
-    const allTags  = [];
-    if(tags) {
-      tags.map((tag, index) => {
-        if (tag.match(/^(IBM|BETA|THIRD-PARTY|LOCAL|DEDICATED|CUSTOM|COMMUNITY|PRIVATE)$/i)) {
-            allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type={tag.toLowerCase()}> {tag} </Tag>);
-        } else if (this.props.artifact.deprecationUrl && tag.match(/^(DEPRECATED)$/i)) {
-          allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type="custom"> {this.props.i18n.deprecationWarning} </Tag>);
-        } else if (tag.match(/^(EXPERIMENTAL)$/i)) {
-          allTags.push(<Tag key={tag.toLowerCase()} className={tag.toLowerCase()} type={tag.toLowerCase()}> {tag.toLowerCase()} </Tag>);
-        } else {
-          allTags.push(<Tag key={tag.toLowerCase()} className='custom ${tag.toLowerCase()}' type="custom"> {tag} </Tag>);
-        }
-        if (isStandardAccount && this.props.artifact.accountTag) {
-          allTags.push(<Tag key="account-tag" className="custom account-tag" type="account-tag"> {this.props.artifact.accountTagName}</Tag>)
-        }
-        if (this.props.artifact.availabilityTag && this.props.artifact.availabilityTag !== 'public') {
-          allTags.push(<Tag key="availability-tag" className="custom availability-tag" type="availability-tag"> {this.props.artifact.availabilityTagName}</Tag>)
-        }
-      });
-    }
-    return allTags;
+  generateDetailBlock(obj) {
+    return (
+      <div className={`bx--detail-page-sidebar-artifact-prop ${ obj.type }-container`} key={ obj.value }>
+        <span className={ `bx--detail-page-sidebar-artifact-label ${ obj.type }-label` }>{ obj.label }</span>
+        <span className={ `bx--detail-page-sidebar-artifact-value ${ obj.type }-value` }>{ obj.value }</span>
+      </div>
+    )
+  }
+
+  generateDetailsBlocks(opts) {
+    return opts.map(obj => {
+      if (this.props.displayDetails) {
+        return this.generateDetailBlock(obj);
+      }
+    });
   }
 
   render() {
     const {
       children,
-      i18n,
-      artifact,
+      displayDetails,
+      details,
+      sidebarSections,
     } = this.props;
-    const isStandardAccount = false;// (accountType === 'STANDARD');
 
     return (
       <div className="bx--detail-page-sidebar">
         <div className="bx--detail-page-sidebar-artifact">
-          { (artifact.name && artifact.displayName) && (
-              <h2 className="bx--detail-page-sidebar-artifact-name">{artifact.name}</h2>
+          { (displayDetails && details) && (
+              <h2 className="bx--detail-page-sidebar-artifact-name">{details.header}<hr/></h2>
           )}
-          <p className="bx--detail-page-sidebar-artifact-description">{artifact.description}</p>
-          <div className="artifact-tag-container">
-            { this.generateTags(artifact.tags, isStandardAccount) }
-          </div>
-          <div className="artifact-tag-container">
-            { artifact.docURL &&
-              <Link href={artifact.docURL} onClick={artifact.onClickDocs} className="bx--detail-page-sidebar-artifact-docs" target="_blank">
-                {i18n.viewDocs}
-              </Link>
-            }
-            { artifact.termsUrl &&
-              <Link href={artifact.termsUrl} onClick={artifact.onClickTerms} className="bx--detail-page-sidebar-artifact-terms" target="_blank">
-                {i18n.viewTerms}
-              </Link>
-            }
-          </div>
           <div className="bx--detail-page-sidebar-artifact-details-container">
-            {
-              this.generateBlocks([
-                { type: 'author', cssName: 'author', label: i18n.author, value: artifact.author },
-                { type: 'version', cssName: 'version', label: i18n.version, value: artifact.version },
-                { type: 'createdDate', cssName: 'created-date', label: i18n.createdDate, value: artifact.createdDate },
-                { type: 'publishedDate', cssName: 'publish-date', label: i18n.publishDate, value: artifact.publishDate },
-                { type: 'type', cssName: 'type', label: i18n.type, value: i18n[artifact.type] },
-                { type: 'locationName', cssName: 'location', label: i18n.location, value: artifact.locationName },
-                { type: 'regionName', cssName: 'region', label: i18n.region, value: artifact.regionName }
+            {displayDetails &&
+              this.generateDetailsBlocks([
+                { type: 'author', label: details.author, value: details.author },
+                { type: 'version', label: details.version, value: details.version },
+                { type: 'createdDate', label: details.createdDate, value: details.createdDate },
+                { type: 'publishedDate', label: details.publishDate, value: details.publishDate },
+                { type: 'type', label: details.type, value: details.type },
+                { type: 'location', label: details.location, value: details.locationName },
+                { type: 'region', label: details.region, value: details.regionName }
               ])
             }
           </div>
         </div>
-          {children}
+        { sidebarSections &&
+          this.generateSideBarBlocks(sidebarSections)
+        }
+        {children}
       </div>
     );
   }
