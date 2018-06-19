@@ -110,7 +110,9 @@ class Lightbox extends Component {
                             { this.state.currentIndex > 0 &&
                                 <div className="LightboxNavPrev">
                                     <div className="LightboxNavWidth">
-                                        <div className="LightboxPrev icon-arrow-big prev" tabIndex="0" onClick={this.back}></div>
+                                        <div className="LightboxPrev icon-arrow-big prev" tabIndex="0" onClick={this.back}>
+                                          <svg viewBox="0 0 7 12"><path d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z"></path></svg>
+                                        </div>
                                     </div>
                                 </div>
                             }
@@ -134,7 +136,9 @@ class Lightbox extends Component {
                             { this.state.currentIndex < mediaData.length - 1 &&
                                 <div className="LightboxNavNext">
                                     <div className="LightboxNavWidth">
-                                        <div className="LightboxNext icon-arrow-big next" tabIndex="0" onClick={this.next}></div>
+                                        <div className="LightboxNext icon-arrow-big next" tabIndex="0" onClick={this.next}>
+                                          <svg viewBox="0 0 7 12"><path d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path></svg>
+                                        </div>
                                     </div>
                                 </div>
                             }
