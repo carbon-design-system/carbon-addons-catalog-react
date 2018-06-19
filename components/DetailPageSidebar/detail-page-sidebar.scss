@@ -10,10 +10,10 @@
   }
   .bx--detail-page-sidebar-artifact {
     @include breakpoint(bp--sm--major) {
-      margin-bottom: 35%;
+      margin-bottom: 15%;
     }
     @include breakpoint(bp--md--major) {
-      margin-bottom: 40%;
+      margin-bottom: 20%;
     }
   }
   .artifact-tag-container {
@@ -73,5 +73,11 @@
     text-overflow: ellipsis;
     display: inline-block;
     color: $support-04;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $ui-04;
   }
 }

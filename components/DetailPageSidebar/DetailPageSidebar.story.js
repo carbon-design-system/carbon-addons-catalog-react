@@ -5,39 +5,17 @@ import { Notification } from 'carbon-components-react';
 
 
 const detailPageSidebarProps = {
-    artifact: {
-        name: 'Microservice Name',
-        displayName: true,
-        id: 'id',
-        tags: ['IBM', 'Deprecated', 'Private', 'Beta', 'Lite'],
-        tagName: 'IBM',
-        deprecationUrl: '#',
-        description: 'This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service This is a sample description of the service',
-        accountType: 'Standard',
-        type: 'type',
-        docURL: 'www.google.com',
-        termsUrl: 'www.google.com',
-        onClickDocs:function() {console.log('Docs Link');},
-        onClickTerms:function() {console.log('Terms Link');},
-        version: '1.0',
-        author: 'author',
-        createdDate: '1/1/2017',
-        locationName: 'Dallas',
-        regionName: 'US-south',
-    },
-    i18n: {
-        viewDocs: 'View Docs',
-        viewTerms: 'View Terms',
-        author: 'Author',
-        version: 'Version',
-        createdDate: 'Created date',
-        publishDate: 'Publish date',
-        type: 'Type',
-        service: 'Service',
-        location: 'Location',
-        region: 'Region',
-        deprecationWarning: 'Deprecated',
-    }
+  displayDetails: true,
+  details: {
+    header: 'Microservice Name',
+    author: 'IBM',
+    version: '3.1',
+    createdDate: '1/1/2017',
+    publishDate: '2/1/2018',
+    regionName: 'US',
+    lastUpdated: 'Yesterday',
+    type: 'Service',
+  },
 };
 
 storiesOf('DetailPageSidebar', module)
