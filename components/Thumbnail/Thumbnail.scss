@@ -1,0 +1,105 @@
+.thumbnail-container {
+  .thumbnailImage {
+      height: 150px;
+
+      &:hover {
+          border-radius: 3px;
+          box-shadow: 0 0 2pt 1pt #00aed1; // sass-lint:disable-line no-color-literals
+          cursor: pointer;
+      }
+  }
+
+  .imageContainer {
+      display: table-cell;
+      padding: 4px;
+
+      .icon-play-grey-large {
+          position: relative;
+          cursor: pointer;
+          top: -87px;
+          left: 125px;
+      }
+  }
+
+  .viewPort {
+      min-height: 159px;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .thumbnailContainer {
+      position: absolute;
+      display: table;
+      top: 0;
+      left: 0;
+      transition: 1s ease;
+  }
+
+  .left-scroll,
+  .right-scroll {
+      position: absolute;
+      top: 0;
+      margin-top: 55px;
+      z-index: 1;
+
+      .icon-arrow-big {
+          margin-top: 20px;
+      }
+  }
+
+  .left-scroll {
+      left: 0;
+
+      &.icon-arrow-big,
+      &.icon-arrow-big-hover {
+          transform: rotate(180deg);
+      }
+  }
+
+  .right-scroll {
+      right: 0;
+  }
+
+  .scrollContainerLeft,
+  .scrollContainerRight {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+      height: 100%;
+      width: 100px;
+      position: absolute;
+      transition: visibility 0.5s linear, opacity 0.5s linear;
+
+      &.hideScroller {
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0.5s linear, opacity 0.5s linear;
+      }
+  }
+
+  .scrollContainerRight {
+      // sass-lint:disable-block no-color-literals
+
+      @include light-ui {
+          background: linear-gradient(to left, rgba(223, 230, 235, 1) 0%, rgba(223, 230, 235, 0) 100%);
+      }
+
+      right: 0;
+      background: linear-gradient(to left, rgba(21, 41, 52, 1) 0%, rgba(21, 41, 52, 0) 100%);
+  }
+
+  .scrollContainerLeft {
+      // sass-lint:disable-block no-color-literals
+
+      @include light-ui {
+          background: linear-gradient(to right, rgba(223, 230, 235, 1) 0%, rgba(223, 230, 235, 0) 100%);
+      }
+
+      background: linear-gradient(to right, rgba(21, 41, 52, 1) 0%, rgba(21, 41, 52, 0) 100%);
+  }
+
+  .icon-arrow-big-hover,
+  .icon-arrow-big:hover {
+      cursor: pointer;
+  }
+}
