@@ -133,7 +133,9 @@ class ThumbnailSlider extends Component {
                 <div className="viewPort" ref={(node) => { this.viewPort = node; }}>
                     <div className={`scrollContainerLeft${this.state.showLeftScroller ? '' : ' hideScroller'}`}
                         onClick={this.shift('right')}>
-                        <div className="left-scroll icon-arrow-big"/>
+                        <div className="left-scroll icon-arrow-big">
+                          <svg viewBox="0 0 7 12"><path d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z"></path></svg>
+                        </div>
                     </div>
                     <div className="thumbnailContainer" ref={(node) => { this.thumbnailContainer = node; }}>
                         { mediaData.map((media, index) =>
@@ -144,7 +146,9 @@ class ThumbnailSlider extends Component {
                     </div>
                     <div className={`scrollContainerRight${this.state.showRightScroller ? '' : ' hideScroller'}`}
                         onClick={this.shift('left')}>
-                        <div className="right-scroll icon-arrow-big"/>
+                        <div className="right-scroll icon-arrow-big">
+                          <svg viewBox="0 0 7 12"><path d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path></svg>
+                        </div>
                     </div>
                 </div>
                 { this.state.showLightbox &&
