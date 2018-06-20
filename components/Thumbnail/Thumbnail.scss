@@ -49,11 +49,6 @@
 
   .left-scroll {
       left: 0;
-
-      &.icon-arrow-big,
-      &.icon-arrow-big-hover {
-          transform: rotate(180deg);
-      }
   }
 
   .right-scroll {
