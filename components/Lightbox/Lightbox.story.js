@@ -6,9 +6,7 @@ import Lightbox from './Lightbox';
 const lightboxProps = {
   currentIndex: 0,
   onClose: action('onClose'),
-  i18n: {
-    t: str => str,
-  },
+  t: str => str,
   mediaData: [
     {
       type: 'image',

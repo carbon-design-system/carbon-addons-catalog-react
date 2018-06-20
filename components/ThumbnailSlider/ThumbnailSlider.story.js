@@ -4,9 +4,7 @@ import ThumbnailSlider from './ThumbnailSlider';
 
 
 const thumbnailSliderProps = {
-  i18n: {
-    t: str => str,
-  },
+  t: str => str,
   mediaData: [
     {
       type: 'image',

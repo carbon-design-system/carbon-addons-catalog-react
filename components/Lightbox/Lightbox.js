@@ -67,7 +67,7 @@ class Lightbox extends Component {
     };
 
     render() {
-        const { mediaData, i18n, onClose } = this.props;
+        const { mediaData, t, onClose } = this.props;
 
         if (!mediaData || !mediaData[this.state.currentIndex]) {
             return null;
@@ -78,8 +78,6 @@ class Lightbox extends Component {
 
         const sources = item.source || [];
         const hasSources = sources.length > 0 && sources.some(source => source.url && source.type);
-
-        const { t } = i18n;
 
         return (
             <div className="cloudOELightbox dialogModal dialogOpen" tabIndex="0" onKeyDown={this.switchMedia}

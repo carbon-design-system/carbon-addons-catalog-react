@@ -122,7 +122,7 @@ class ThumbnailSlider extends Component {
     };
 
     render() {
-        const { mediaData, i18n } = this.props;
+        const { mediaData, t } = this.props;
 
         if (!mediaData) {
             return null;
@@ -149,7 +149,7 @@ class ThumbnailSlider extends Component {
                 </div>
                 { this.state.showLightbox &&
                     <Lightbox mediaData={mediaData} currentIndex={this.state.selectedThumbnailIndex}
-                        onClose={this.closeLightBox} i18n={i18n}/>
+                        onClose={this.closeLightBox} t={t}/>
                 }
             </div>
         );
