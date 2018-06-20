@@ -55,16 +55,18 @@ class DetailPageSidebar extends Component {
 
     return (
       <div className="bx--detail-page-sidebar">
-        <div className="bx--detail-page-sidebar-artifact">
-          { displayDetails && detailsHeader &&
-            <h2 className="bx--detail-page-sidebar-artifact-name">{detailsHeader}<hr/></h2>
-          }
-          <div className="bx--detail-page-sidebar-artifact-details-container">
-            {displayDetails && details &&
-              this.generateDetailsBlocks(details)
+        { displayDetails &&
+          <div className="bx--detail-page-sidebar-artifact" key="details">
+            { detailsHeader &&
+              <h2 className="bx--detail-page-sidebar-artifact-name">{detailsHeader}<hr/></h2>
+            }
+            { details &&
+              <div className="bx--detail-page-sidebar-artifact-details-container">
+                { this.generateDetailsBlocks(details) }
+              </div>
             }
           </div>
-        </div>
+        }
         { sidebarSections &&
           this.generateSideBarBlocks(sidebarSections)
         }
