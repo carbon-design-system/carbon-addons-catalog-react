@@ -2,7 +2,6 @@ import React from 'react';
 import { action, storiesOf } from '@storybook/react';
 import Lightbox from './Lightbox';
 
-
 const lightboxProps = {
   currentIndex: 0,
   onClose: action('onClose'),
