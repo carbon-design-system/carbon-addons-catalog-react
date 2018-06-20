@@ -66,4 +66,44 @@
     font-size: rem(14px);
     line-height: 1.5;
   }
+
+  .bx--artifact-details-description-content {
+    width: 100%;
+    height: auto;
+    line-height: 1.5;
+
+    .bx--artifact-details-description-bullets {
+      font-size: rem(14px);
+      list-style: disc outside none;
+    }
+
+    .bx--description-bullet-content {
+      width: 100%;
+      margin-left: rem(20px);
+      margin-bottom: rem(24px);
+
+      @media screen and (min-width: breakpoint('md')) {
+        width: calc(50% - rem(20px));
+      }
+    }
+
+    .bx--description-bullet-content:nth-child(2n + 1) {
+      width: 100%;
+      padding-right: rem(16px);
+
+      @media screen and (min-width: breakpoint('md')) {
+        width: calc(50% - rem(36px));
+      }
+    }
+
+    .bx--bullet-title {
+      font-weight: bold;
+
+      & + .bx--bullet-description {
+        display: block;
+        list-style-position: inherit;
+        margin: rem(8px) rem(24px) 0 0;
+      }
+    }
+  }
 }
