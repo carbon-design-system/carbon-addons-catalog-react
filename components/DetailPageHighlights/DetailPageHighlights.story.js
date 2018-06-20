@@ -6,37 +6,27 @@ const MarkDown = 'Get local disk performance with SAN persistence and durability
 
 const additionalProps = {
   artifact: {
-    type: 'softlayer',
     longDescription: 'Get local disk performance with SAN persistence and durability. Increase storage capacity available to your Bluemix Virtual and Bare Metal Servers with a maximum of 48k IOPs.* Deploy flash-backed* block storage in granular increments–from 1000GB to 12000GB–and customize it all with a variety of capabilities. Choose Endurance tiers for simple, predefined, per-GB pricing—ideal for most general purpose workloads. Or, build a fine-tuned environment with allocated IOPS with Performance options—ideal for well-understood workload requirements.',
     mediaData: [
-                  { 'thumbnailUrl': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/20b2c-1622630164/assets/screenshots/large/block-storage/01_block_list_page.png',
-                    'url': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/20b2c-1622630164/assets/screenshots/large/block-storage/01_block_list_page.png',
-                    'type': 'image',
-                    'caption': 'Block List Page'
+                  { thumbnailUrl: 'http://via.placeholder.com/350x150',
+                    url: 'http://via.placeholder.com/350x150',
+                    type: 'image',
+                    caption: 'Block List Page'
                   },
-                  { 'thumbnailUrl': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/16650-181970969/assets/screenshots/large/block-storage/01_details_page.png',
-                    'url': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/16650-181970969/assets/screenshots/large/block-storage/01_details_page.png',
-                    'type': 'image',
-                    'caption': 'Block storage details page'
+                  { thumbnailUrl: 'http://via.placeholder.com/351x150',
+                    url: 'http://via.placeholder.com/351x150',
+                    type: 'image',
+                    caption: 'Block storage details page'
                   },
-                  { 'thumbnailUrl': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/261cf-861567505/assets/screenshots/large/block-storage/04_ordering_block_storage_modal.png',
-                    'url': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/261cf-861567505/assets/screenshots/large/block-storage/04_ordering_block_storage_modal.png',
-                    'type': 'image',
-                    'caption': 'Ordering block storage modal'
-                  },
-                  { 'thumbnailUrl': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/1bf11-1647039183/assets/screenshots/large/block-storage/04_schedule_snapshot_modal.png',
-                    'url': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/1bf11-1647039183/assets/screenshots/large/block-storage/04_schedule_snapshot_modal.png',
-                    'type': 'image',
-                    'caption': 'Schedule snapshot modal'
-                  },
-                  { 'thumbnailUrl': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/1c851-1691900368/assets/screenshots/large/block-storage/07_authorize_host_modal.png',
-                    'url': 'https://sl-catalogapi-production-red.stage1.ng.bluemix.net/cache/1c851-1691900368/assets/screenshots/large/block-storage/07_authorize_host_modal.png',
-                    'type': 'image',
-                    'caption': 'Authorize host modal'
+                  { thumbnailUrl: 'http://via.placeholder.com/352x150',
+                    url: 'http://via.placeholder.com/352x150',
+                    type: 'image',
+                    caption: 'Ordering block storage modal'
                   },
                 ],
     mediaDesc: 'Click an image to enlarge and view screen captures, slides, or videos. Screen caps show the user interface for the service after it has been provisioned.',
   },
+  t: str => str,
   i18n: {
     'topHeader': 'Overview',
     'middleHeader': 'Features',

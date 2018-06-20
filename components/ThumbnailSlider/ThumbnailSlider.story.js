@@ -2,7 +2,6 @@ import React from 'react';
 import { action, storiesOf } from '@storybook/react';
 import ThumbnailSlider from './ThumbnailSlider';
 
-
 const thumbnailSliderProps = {
   t: str => str,
   mediaData: [

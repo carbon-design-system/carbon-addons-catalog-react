@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import MarkdownRenderer from '../../internal/MarkdownRenderer/MarkdownRenderer';
 import { Notification } from '../carbon';
+import ThumbnailSlider from '../ThumbnailSlider/ThumbnailSlider';
 
 const propTypes = {
   artifact: PropTypes.object,
@@ -11,7 +12,13 @@ const propTypes = {
   children: PropTypes.node
 };
 
-const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) => {
+const DetailsPageHighlights = ({ artifact, i18n, t, bullets, markdown, children }) => {
+
+  const sliderProps = {
+    mediaData: artifact.mediaData,
+    t: str => str,
+  }
+
   return (
     <div className="bx--artifact-details-highlight-container">
       {i18n.notification &&
@@ -50,7 +57,8 @@ const DetailsPageHighlights = ({ artifact, i18n, bullets, markdown, children }) 
         // Screenshots
         <div className="bx--createArtifactFlexGroupColumn">
           <div className="bx--title-label">{i18n.bottomHeader}</div>
-          <div className="bx--description-label">{artifact.mediaDesc}</div>
+            <ThumbnailSlider {...sliderProps} />
+          <div className="bx--description-label">{}</div>
         </div>
       }
       {children}
