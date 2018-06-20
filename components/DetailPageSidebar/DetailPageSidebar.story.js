@@ -6,16 +6,17 @@ import { Notification } from 'carbon-components-react';
 
 const detailPageSidebarProps = {
   displayDetails: true,
-  details: {
-    header: 'Microservice Name',
-    author: 'IBM',
-    version: '3.1',
-    createdDate: '1/1/2017',
-    publishDate: '2/1/2018',
-    regionName: 'US',
-    lastUpdated: 'Yesterday',
-    type: 'Service',
-  },
+  detailsHeader: 'Microservice Name',
+  details: [
+     { key: 'author', label: 'Author', value: 'IBM' },
+     { key: 'version', label: 'Version', value: '3.1' },
+     { key: 'createdDate', label: 'Created Date', value: '1/1/2017' },
+     { key: 'publishedDate', label: 'Published Date', value: '2/1/2018' },
+     { key: 'type', label: 'Type', value: 'Service' },
+     { key: 'location', label: 'Location', value: 'Dallas' },
+     { key: 'region', label: 'Region', value: 'US-South' },
+  ],
+  sidebarSections: [ {header: 'Locations', content: 'US-South, US-East' }, {header: 'Helpful Links', content: '[Link 1](www.google.com)' }],
 };
 
 storiesOf('DetailPageSidebar', module)
