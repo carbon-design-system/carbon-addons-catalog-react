@@ -17,7 +17,7 @@ class DetailPageSidebar extends Component {
       <div className="bx--detail-page-sidebar-artifact" key={ obj.header }>
         <h2 className="bx--detail-page-sidebar-artifact-name">{obj.header}<hr/></h2>
         <div className="bx--detail-page-sidebar-artifact-details-container">
-          <MarkdownRenderer content={obj.content} />
+          {obj.content}
         </div>
       </div>
     )
