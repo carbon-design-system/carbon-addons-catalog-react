@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import MarkdownRenderer from '../../internal/MarkdownRenderer/MarkdownRenderer';
 import { Tag, Link } from '../carbon';
 
 class DetailPageSidebar extends Component {
@@ -8,7 +7,7 @@ class DetailPageSidebar extends Component {
     displayDetails: PropTypes.bool,
     detailsHeader: PropTypes.string,
     details: PropTypes.array, // in the form { [label: xxxx, value: xxxx, key: xxxx] }
-    sidebarSections: PropTypes.array, // in the form { [header: xxxx, content: xxxx (markdown) ]}
+    sidebarSections: PropTypes.array, // in the form { [header: xxxx, content: xxxx ]}
     children: PropTypes.node
   };
     
