@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Tag, Link } from '../carbon';
+import { Tag, Link } from 'carbon-components-react';
 
 class DetailPageSidebar extends Component {
   static propTypes = {
@@ -10,7 +10,7 @@ class DetailPageSidebar extends Component {
     sidebarSections: PropTypes.array, // in the form { [header: xxxx, content: xxxx ]}
     children: PropTypes.node
   };
-    
+
   generateSideBarBlock(obj) {
     return (
       <div className="bx--detail-page-sidebar-artifact" key={ obj.header }>

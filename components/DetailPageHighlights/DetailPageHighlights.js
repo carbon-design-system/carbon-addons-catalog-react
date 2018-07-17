@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import MarkdownRenderer from '../../internal/MarkdownRenderer/MarkdownRenderer';
-import { Notification } from '../carbon';
+import { Notification } from 'carbon-components-react';
 import ThumbnailSlider from '../ThumbnailSlider/ThumbnailSlider';
 
 const propTypes = {
